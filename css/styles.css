@@ -1,6 +1,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0px 0px 10px 0px;
+  position: relative;
 }
 
 .inline {
@@ -14,12 +15,13 @@ header {
   background: #9cf;
   min-width: 100%;
   padding: 0px 10px;
-  font-size: 2em;
+  z-index: 500;
+  /*font-size: 1.5em;*/
 }
 
 @media screen and (max-width: 650px) {
   header {
-    font-size: 1.5em;
+    /*font-size: 1.5em;*/
   }
 
   .progress-bar {
@@ -27,7 +29,7 @@ header {
   }
 
   section.form {
-    padding-top: 50px;
+    padding-top: 100px;
   }
 }
 
@@ -82,14 +84,18 @@ label {
 
 .progress-bar {
   position: fixed;
-  margin-top: 50px;
+  margin: 50px auto 0;
+  padding-top: 10px;
   width: 100%;
-  height: 50px;
+  height: 65px;
   background: #fc9;
-  font-size: 1.5em;
-  font-style: italic;
+  font-size: 1.25em;
+  /*font-style: italic;*/
   text-align: center;
+  z-index: 450;
 }
+
+/* bootstrap */
 
 section.form, section.order-review{
   display: block;

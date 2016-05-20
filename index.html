@@ -12,17 +12,58 @@
   <link rel="stylesheet" href="css/styles.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body data-spy="scroll" data-target="#prog-bar">
   <header>
-    <span class="company-name">🂡 Cam's Company 🂡</span>
-    <span class="company-page">Checkout Page</span>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">🂡 Cam's Co</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Checkout Form</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+
+
+
+<!--
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <p class="navbar-text"><a href="#">🂡 Cam's Company</a><span class="navbar-right">Checkout Page</span></p>
+        </div>
+      </div>
+    </nav>
+-->
+<!--    <span class="company-name"> 🂡</span>
+    <span class="company-page">Checkout Page</span>-->
   </header>
-  <section class="progress-bar">
-    Seems like this could be a good place for a progress bar...
+  <section id="prog-bar" class="progress-bar">
+    <ul class="nav nav-pills text-center">
+      <li role="presentation" class="active"><a href="#demographic">1 Demographic</a></li>
+      <li role="presentation"><a href="#shipping">2 Shipping</a></li>
+      <li role="presentation"><a href="#billing">3 Billing</a></li>
+      <li role="presentation"><a href="#confirmation">4 Confirmation</a></li>
+    </ul>
+    <!--Seems like this could be a good place for a progress bar...-->
   </section>
   <section class="form">
     <form id="checkoutForm" class="form-horizontal">
-      <h3>Your Name and Demographic Information</h3>
+      <h3 id="demographic">Your Name and Demographic Information</h3>
       <div class="form-group">
         <label for="fname" class="col-sm-2 control-label">First Name</label>
         <div class="col-sm-10">
@@ -30,37 +71,49 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="mname">Middle Initial</label>
-        <input type="text" id="mname" class="form-control" name="mname" autocomplete="additional-name">
+        <label for="mname" class="col-sm-2 control-label">Middle Initial</label>
+        <div class="col-sm-10">
+          <input type="text" id="mname" class="form-control" name="mname" autocomplete="additional-name">
+        </div>
       </div>
       <div class="form-group">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" class="form-control" name="lname" required autocomplete="family-name">
+        <label for="lname" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+          <input type="text" id="lname" class="form-control" name="lname" required autocomplete="family-name">
+        </div>
       </div>
       <div class="form-group">
-        <label for="age">Age</label>
-        <select id="age" class="form-control" name="age">
-          <option>&lt;18</option>
-          <option>18-25</option>
-          <option>26-35</option>
-          <option>36-50</option>
-          <option>&gt;50</option>
-        </select>
+        <label for="age" class="col-sm-2 control-label">Age</label>
+        <div class="col-sm-10">
+          <select id="age" class="form-control" name="age">
+            <option>&lt;18</option>
+            <option>18-25</option>
+            <option>26-35</option>
+            <option>36-50</option>
+            <option>&gt;50</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label for="gender">Gender</label>
-        <select id="gender" class="form-control" name="gender">
-          <option>Male</option>
-          <option>Female</option>
-        </select>
+        <label for="gender" class="col-sm-2 control-label">Gender</label>
+        <div class="col-sm-10">
+          <select id="gender" class="form-control" name="gender">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label for="email1">Email Address</label>
-        <input id="email1" class="form-control" name="email" type="email" required autocomplete="email">
+        <label for="email1" class="col-sm-2 control-label">Email Address</label>
+        <div class="col-sm-10">
+          <input id="email1" class="form-control" name="email" type="email" required autocomplete="email">
+        </div>
       </div>
       <div class="form-group">
-        <label for="email2">Confirm Email Address</label>
-        <input id="email2" class="form-control" name="email" type="email" required autocomplete="email">
+        <label for="email2" class="col-sm-2 control-label">Confirm Email Address</label>
+        <div class="col-sm-10">
+          <input id="email2" class="form-control" name="email" type="email" required autocomplete="email">
+        </div>
       </div>
       <div class="checkbox">
         <label>
@@ -72,24 +125,31 @@
 
 
 <!-- pg2 Shipping Address -->
-      <h3>Your Shipping Address</h3>
+      <h3 id="shipping">Your Shipping Address</h3>
       <div class="checkbox">
         <label>
           <input id="name-ship-chkbx" type="checkbox">Same name as above?
         </label>
       </div>
       <div class="form-group">
-        <label for="fname-ship">First Name</label>
-        <input type="text" id="fname-ship" class="form-control" name="fname" required autocomplete="given-name">
+        <label for="fname-ship" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+          <input type="text" id="fname-ship" class="form-control" name="fname" required autocomplete="given-name">
+        </div>
       </div>
       <div class="form-group">
-        <label for="mname-ship">Middle Initial</label>
-        <input type="text" id="mname-ship" class="form-control" name="mname" autocomplete="additional-name">
+        <label for="mname-ship" class="col-sm-2 control-label">Middle Initial</label>
+        <div class="col-sm-10">
+          <input type="text" id="mname-ship" class="form-control" name="mname" autocomplete="additional-name">
+        </div>
       </div>
       <div class="form-group">
-        <label for="lname-ship">Last Name</label>
-        <input type="text" id="lname-ship" class="form-control" name="lname" required autocomplete="family-name">
+        <label for="lname-ship" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+          <input type="text" id="lname-ship" class="form-control" name="lname" required autocomplete="family-name">
+        </div>
       </div>
+
       <div class="form-group">
         <label for="company-ship">Company</label>
         <input id="company-ship" class="form-control" type="text">
@@ -121,7 +181,7 @@
 
 
 <!-- pg3 Payment Info -->
-      <h3>Your Credit Card Information</h3>
+      <h3 id="billing">Your Credit Card Information</h3>
       <div class="cc-warning"><em>Note: don't enter any actual credit card info!</em></div>
       <div class="form-group">
         <label for="cc-number">Credit Card Number</label>
@@ -240,7 +300,7 @@
 
 <!-- pg 4 Confirmation -->
   <section class="order-review">
-    <h3>Your Order</h3>
+    <h3 id="confirmation">Your Order</h3>
     <table class="your-order">
       <tr class="headings">
         <td>Product</td>

@@ -34,6 +34,9 @@ if (copyNameChkb) {
 	console.log('copy name checkbox exists');
 }
 
+//scrollspy
+$('body').scrollspy({ target: '#prog-bar' })
+
 //event handlers
 copyNameChkb.onclick = function () {
 	if (copyNameChkb.checked) {
