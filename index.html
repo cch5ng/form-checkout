@@ -151,32 +151,46 @@
       </div>
 
       <div class="form-group">
-        <label for="company-ship">Company</label>
-        <input id="company-ship" class="form-control" type="text">
+        <label for="company-ship" class="col-sm-2 control-label">Company</label>
+        <div class="col-sm-10">
+          <input id="company-ship" class="form-control" type="text">
+        </div>
       </div>
       <div class="form-group">
-        <label for="add1-ship">Address Line 1</label>
-        <input name="city" id="add1-ship" class="form-control" type="text" required autocomplete="address-line1">
+        <label for="add1-ship" class="col-sm-2 control-label">Address 1</label>
+        <div class="col-sm-10">
+          <input name="city" id="add1-ship" class="form-control" type="text" required autocomplete="address-line1">
+        </div>
       </div>
       <div class="form-group">
-        <label for="add2-ship">Address Line 2</label>
-        <input name="city" id="add2-ship" class="form-control" type="text" autocomplete="address-line2">
+        <label for="add2-ship" class="col-sm-2 control-label">Address 2</label>
+        <div class="col-sm-10">
+          <input name="city" id="add2-ship" class="form-control" type="text" autocomplete="address-line2">
+        </div>
       </div>
       <div class="form-group">
-        <label for="city-ship">City</label>
-        <input name="province" id="city-ship" class="form-control" type="text" required autocomplete="address-level2">
+        <label for="city-ship" class="col-sm-2 control-label">City</label>
+        <div class="col-sm-10">
+          <input name="province" id="city-ship" class="form-control" type="text" required autocomplete="address-level2">
+        </div>
       </div>
       <div class="form-group">
-        <label for="state-ship">State/Province</label>
-        <input name="region" id="state-ship" class="form-control" type="text" required autocomplete="address-level1">
+        <label for="state-ship" class="col-sm-2 control-label">State/Province</label>
+        <div class="col-sm-10">
+          <input name="region" id="state-ship" class="form-control" type="text" required autocomplete="address-level1">
+        </div>
       </div>
       <div class="form-group">
-        <label for="zip-ship">Postal Code</label>
-        <input name="state" id="zip-ship" class="form-control" type="text" required autocomplete="postal-code">
+        <label for="zip-ship" class="col-sm-2 control-label">Postal Code</label>
+        <div class="col-sm-10">
+          <input name="state" id="zip-ship" class="form-control" type="text" required autocomplete="postal-code">
+        </div>
       </div>
       <div class="form-group">
-        <label for="country-ship">Country</label>
-        <input name="zip" id="country-ship" class="form-control" type="text" required autocomplete="country">
+        <label for="country-ship" class="col-sm-2 control-label">Country</label>
+        <div class="col-sm-10">
+          <input name="zip" id="country-ship" class="form-control" type="text" required autocomplete="country">
+        </div>
       </div>
 
 
@@ -184,39 +198,30 @@
       <h3 id="billing">Your Credit Card Information</h3>
       <div class="cc-warning"><em>Note: don't enter any actual credit card info!</em></div>
       <div class="form-group">
-        <label for="cc-number">Credit Card Number</label>
-        <input id="cc-number" class="form-control" type="number" required>
+        <label for="cc-number" class="col-sm-2 control-label">Credit Card Number</label>
+        <div class="col-sm-10">
+          <input id="cc-number" class="form-control" type="number" required>
+        </div>
       </div>
       <div class="form-group">
-        <label for="cc-type">Credit Card Type</label>
-        <select id="cc-type" class="form-control" name="cc">
-          <option>Visa</option>
-          <option>American Express</option>
-          <option>Mastercard</option>
-          <option>Discover</option>
-        </select>
+        <label for="cc-type" class="col-sm-2 control-label">Credit Card Type</label>
+        <div class="col-sm-10">
+          <select id="cc-type" class="form-control" name="cc">
+            <option>Visa</option>
+            <option>American Express</option>
+            <option>Mastercard</option>
+            <option>Discover</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label for="cc-expir-month">Expiration Date</label>
-        <div class="input-group">
+        <label for="cc-expir-month" class="col-sm-2 control-label">Expiration Date</label>
+        <div class="input-group col-sm-3">
           <input type="number" id="cc-expir-month" class="form-control" placeholder="MM">
           <span class="input-group-addon">/</span>
           <input type="number" id="cc-expir-year" class="form-control" placeholder="YY">
         </div>
       </div>
-
-
-
-
-      <div class="form-group">
-        <label for="cc-expir-month">Expiration Date</label>
-        <input type="number" id="cc-expir-month" class="form-control" placeholder="MM"><input type="number" id="cc-expir-year" class="form-control" placeholder="YY">
-      </div>
-      <div class="form-group">
-        <label for="cc-cvv">CVV</label>
-        <input type="number" id="cc-cvv" class="form-control" >
-      </div>
-
 
 
       <h3>Your Billing Address</h3>
@@ -226,18 +231,68 @@
         </label>
       </div>
       <div class="form-group">
-        <label for="fname-bill">First Name</label>
-        <input type="text" id="fname-bill" class="form-control" name="fname" required autocomplete="given-name">
+        <label for="fname-bill" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+          <input type="text" id="fname-bill" class="form-control" name="fname" required autocomplete="given-name">
+        </div>
       </div>
       <div class="form-group">
-        <label for="mname-bill">Middle Initial</label>
-        <input type="text" id="mname-bill" class="form-control" name="mname" autocomplete="additional-name">
+        <label for="mname-bill" class="col-sm-2 control-label">Middle Initial</label>
+        <div class="col-sm-10">
+          <input type="text" id="mname-bill" class="form-control" name="mname" autocomplete="additional-name">
+        </div>
       </div>
       <div class="form-group">
-        <label for="lname-bill">Last Name</label>
-        <input type="text" id="lname-bill" class="form-control" name="lname" required autocomplete="family-name">
+        <label for="lname-bill" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+          <input type="text" id="lname-bill" class="form-control" name="lname" required autocomplete="family-name">
+        </div>
       </div>
 
+      <div class="form-group">
+        <label for="company-bill" class="col-sm-2 control-label">Company</label>
+        <div class="col-sm-10">
+          <input id="company-bill" class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="add1-bill" class="col-sm-2 control-label">Address 1</label>
+        <div class="col-sm-10">
+          <input name="city" id="add1-bill" class="form-control" type="text" required autocomplete="address-line1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="add2-bill" class="col-sm-2 control-label">Address 2</label>
+        <div class="col-sm-10">
+          <input name="city" id="add2-bill" class="form-control" type="text" autocomplete="address-line2">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="city-bill" class="col-sm-2 control-label">City</label>
+        <div class="col-sm-10">
+          <input name="province" id="city-bill" class="form-control" type="text" required autocomplete="address-level2">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="state-bill" class="col-sm-2 control-label">State/Province</label>
+        <div class="col-sm-10">
+          <input name="region" id="state-bill" class="form-control" type="text" required autocomplete="address-level1">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="zip-bill" class="col-sm-2 control-label">Postal Code</label>
+        <div class="col-sm-10">
+          <input name="state" id="zip-bill" class="form-control" type="text" required autocomplete="postal-code">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country-bill" class="col-sm-2 control-label">Country</label>
+        <div class="col-sm-10">
+          <input name="zip" id="country-bill" class="form-control" type="text" required autocomplete="country">
+        </div>
+      </div>
+
+<!--
       <div class="form-group">
         <label for="company-bill">Company</label>
         <input id="company-bill" class="form-control" type="text">
@@ -266,7 +321,7 @@
         <label for="country-bill">Country</label>
         <input name="zip" id="country-bill" class="form-control" type="text" required autocomplete="country">
       </div>
-
+-->
 
 
 <!--
