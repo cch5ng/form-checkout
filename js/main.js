@@ -30,9 +30,55 @@ var countryBill = document.querySelector('#country-bill');
 //copy address from shipping section to billing section
 var copyAddChkb = document.querySelector('#bill-add-match-ship');
 
-if (copyNameChkb) {
-	console.log('copy name checkbox exists');
+//check geolocation
+var reverseGeoCodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
+var lat, long;
+var geoAdd1, geoAdd2, geoCity, geoState, geoZip, geoCountry;
+var results;
+if ("geolocation" in navigator) {
+	console.log('geolocation supported');
+	navigator.geolocation.getCurrentPosition(function(position) {
+		lat = position.coords.latitude;
+		long = ',' + position.coords.longitude;
+		reverseGeoCodeUrl += lat + long;
+
+		$.ajax(reverseGeoCodeUrl)
+			.done(function(data) {
+				if (data) {
+					results = data['results'][0]['address_components'];
+					geoAdd1 = results[0]['short_name'] + ' ' + results[1]['short_name'];
+					add1Ship.value = geoAdd1;
+					console.log('geoAdd1: ' + geoAdd1);
+					geoCity = results[2]['short_name'];
+					cityShip.value = geoCity;
+					console.log('geoCity: ' + geoCity);
+					geoState = results[4]['short_name'];
+					stateShip.value = geoState;
+					console.log('geoState: ' + geoState);
+					geoCountry = results[5]['short_name'];
+					countryShip.value = geoCountry;
+					console.log('geoCountry: ' + geoCountry);
+					geoZip = results[6]['short_name'];
+					zipShip.value = geoZip;
+					console.log('geoZip: ' + geoZip);
+
+
+				}
+			}).fail(function(jqXHR, textStatus, errorThrown) {
+				console.log('err: ' + errorThrown);
+			});
+		console.log('lat: ' + position.coords.latitude + '; long: ' + position.coords.longitude);
+		//do_something(position.coords.latitude, position.coords.longitude);
+	}, function(error) {
+		console.log('sorry, unable to retrieve location');
+	});
+
+  /* geolocation is available */
+} else {
+	console.log('geolocation not supported');
+  /* geolocation IS NOT available */
 }
+
 
 //scrollspy
 $('body').scrollspy({ target: '#prog-bar' })
@@ -87,6 +133,10 @@ submit.onclick = function () {
 	var emailValidationError = '';
 
 	//validate zip code
+	zipShip.setCustomValidity(zipValidation(zipShip));
+	if (!copyAddChkb.checked) {
+		zipBill.setCustomValidity(zipValidation(zipBill));
+	}
 
 	//validate email address match
 	if (email1.value !== email2.value) {
@@ -101,5 +151,17 @@ submit.onclick = function () {
 	console.log('emailValidationError: ' + emailValidationError);
 	email1.setCustomValidity(emailValidationError);
 };
+
+//helpers
+
+var zipValidation = function(zipCodeElement) {
+	if (zipCodeElement.value.match(/[0-9]{5}[-]?[0-9]?[0-9]?[0-9]?[0-9]?/g)) {
+		console.log('zip format is good');
+		return '';
+	} else {
+		console.log('zip format needs fix');
+		return 'The zip code format should be 99999 or 99999-9999.'
+	}
+}
 
 //https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet
