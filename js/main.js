@@ -8,7 +8,8 @@ var firstNameShip = document.querySelector('#fname-ship');
 var middleNameShip = document.querySelector('#mname-ship');
 var lastNameShip = document.querySelector('#lname-ship');
 //copy name from top to shipping section
-var copyNameChkb = document.getElementById('name-ship-chkbx');
+var nameShipUniqueChk = document.getElementById('shipping-name-unique');
+var divShippingAddGroup = document.getElementById('name-shipping-group');
 
 var companyShip = document.querySelector('#company-ship');
 var add1Ship = document.querySelector('#add1-ship');
@@ -28,7 +29,8 @@ var stateBill = document.querySelector('#state-bill');
 var zipBill = document.querySelector('#zip-bill');
 var countryBill = document.querySelector('#country-bill');
 //copy address from shipping section to billing section
-var copyAddChkb = document.querySelector('#bill-add-match-ship');
+var billAddUniqueChk = document.querySelector('#bill-add-unique');
+var divAddressBillingGroup = document.getElementById('billing-add-group');
 
 //check geolocation
 var reverseGeoCodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
@@ -84,35 +86,26 @@ if ("geolocation" in navigator) {
 $('body').scrollspy({ target: '#prog-bar' })
 
 //event handlers
-copyNameChkb.onclick = function () {
-	if (copyNameChkb.checked) {
-		console.log('copy name checkbox val: ' + copyNameChkb.value);
-		firstNameShip.value = firstName.value;
-		middleNameShip.value = middleName.value;
-		lastNameShip.value = lastName.value;
-	} else {
-		console.log('copy name checkbox val: ' + copyNameChkb.value);
+nameShipUniqueChk.onclick = function () {
+	if (nameShipUniqueChk.checked) {
+		console.log('copy name checkbox val: ' + nameShipUniqueChk.value);
+		divShippingAddGroup.removeAttribute('hidden');
 		firstNameShip.value = '';
 		middleNameShip.value = '';
 		lastNameShip.value = '';
+	} else {
+		console.log('copy name checkbox val: ' + nameShipUniqueChk.value);
+		firstNameShip.value = firstName.value;
+		middleNameShip.value = middleName.value;
+		lastNameShip.value = lastName.value;
+		divShippingAddGroup.setAttribute('hidden', true);
 	}
 };
 
-copyAddChkb.onclick = function () {
-	if (copyAddChkb.checked) {
-		console.log('copy add checkbox val: ' + copyAddChkb.value);
-		firstNameBill.value = firstNameShip.value;
-		middleNameBill.value = middleNameShip.value;
-		lastNameBill.value = lastNameShip.value;
-		companyBill.value = companyShip.value;
-		add1Bill.value = add1Ship.value;
-		add2Bill.value = add2Ship.value;
-		cityBill.value = cityShip.value;
-		stateBill.value = stateShip.value;
-		zipBill.value = zipShip.value;
-		countryBill.value = countryShip.value;
-	} else {
-		console.log('copy add checkbox val: ' + copyAddChkb.value);
+billAddUniqueChk.onclick = function () {
+	if (billAddUniqueChk.checked) {
+		console.log('copy add checkbox val: ' + billAddUniqueChk.value);
+		divAddressBillingGroup.removeAttribute('hidden');
 		firstNameBill.value = '';
 		middleNameBill.value = '';
 		lastNameBill.value = '';
@@ -123,6 +116,19 @@ copyAddChkb.onclick = function () {
 		stateBill.value = '';
 		zipBill.value = '';
 		countryBill.value = '';
+	} else {
+		console.log('copy add checkbox val: ' + billAddUniqueChk.value);
+		firstNameBill.value = firstNameShip.value;
+		middleNameBill.value = middleNameShip.value;
+		lastNameBill.value = lastNameShip.value;
+		companyBill.value = companyShip.value;
+		add1Bill.value = add1Ship.value;
+		add2Bill.value = add2Ship.value;
+		cityBill.value = cityShip.value;
+		stateBill.value = stateShip.value;
+		zipBill.value = zipShip.value;
+		countryBill.value = countryShip.value;
+		divAddressBillingGroup.setAttribute('hidden', true);
 	}
 };
 

@@ -24,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand header-link" href="#">🂡 Cam's Co</a>
+          <a class="navbar-brand header-link" href="#">🂡 CamCo</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -99,34 +99,32 @@
             <input id="email2" class="form-control" name="email" type="email" required autocomplete="email">
           </div>
         </div>
-        <div class="checkbox">
-          <label>
-            <input id="email-list" type="checkbox">Put me on the mailing list?
-          </label>
-        </div>
   <!-- pg2 Shipping Address -->
         <h3 id="shipping">Your Shipping Address</h3>
         <div class="checkbox">
           <label>
-            <input id="name-ship-chkbx" type="checkbox">Same name as above?
+            <input id="shipping-name-unique" type="checkbox">Different name from above?
           </label>
         </div>
-        <div class="form-group">
-          <label for="fname-ship" class="col-sm-2 control-label">First Name</label>
-          <div class="col-sm-10">
-            <input type="text" id="fname-ship" class="form-control" name="fname" required autocomplete="given-name">
+        <br>
+        <div id="name-shipping-group" hidden>
+          <div class="form-group">
+            <label for="fname-ship" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" id="fname-ship" class="form-control" name="fname" required autocomplete="given-name">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="mname-ship" class="col-sm-2 control-label">Middle Initial</label>
-          <div class="col-sm-10">
-            <input type="text" id="mname-ship" class="form-control" name="mname" autocomplete="additional-name">
+          <div class="form-group">
+            <label for="mname-ship" class="col-sm-2 control-label">Middle Initial</label>
+            <div class="col-sm-10">
+              <input type="text" id="mname-ship" class="form-control" name="mname" autocomplete="additional-name">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="lname-ship" class="col-sm-2 control-label">Last Name</label>
-          <div class="col-sm-10">
-            <input type="text" id="lname-ship" class="form-control" name="lname" required autocomplete="family-name">
+          <div class="form-group">
+            <label for="lname-ship" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" id="lname-ship" class="form-control" name="lname" required autocomplete="family-name">
+            </div>
           </div>
         </div>
 
@@ -194,80 +192,86 @@
         </div>
         <div class="form-group">
           <label for="cc-expir-month" class="col-sm-2 control-label">Expiration Date</label>
-          <div class="input-group col-sm-3">
-            <input type="number" id="cc-expir-month" class="form-control" placeholder="MM">
-            <span class="input-group-addon">/</span>
-            <input type="number" id="cc-expir-year" class="form-control" placeholder="YY">
+          <div class="col-sm-4">
+            <div class="input-group ">
+              <input type="number" id="cc-expir-month" class="form-control" placeholder="MM">
+              <span class="input-group-addon">/</span>
+              <input type="number" id="cc-expir-year" class="form-control" placeholder="YY">
+            </div>
           </div>
+          <div class="col-sm-6"></div>
         </div>
 
         <h3>Your Billing Address</h3>
         <div class="checkbox">
           <label>
-            <input id="bill-add-match-ship" type="checkbox">Same as Shipping Address?
+            <input id="bill-add-unique" type="checkbox">Different from Shipping Address?
           </label>
         </div>
-        <div class="form-group">
-          <label for="fname-bill" class="col-sm-2 control-label">First Name</label>
-          <div class="col-sm-10">
-            <input type="text" id="fname-bill" class="form-control" name="fname" required autocomplete="given-name">
+        <br>
+        <div id="billing-add-group" hidden>
+          <div class="form-group">
+            <label for="fname-bill" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+              <input type="text" id="fname-bill" class="form-control" name="fname" required autocomplete="given-name">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="mname-bill" class="col-sm-2 control-label">Middle Initial</label>
-          <div class="col-sm-10">
-            <input type="text" id="mname-bill" class="form-control" name="mname" autocomplete="additional-name">
+          <div class="form-group">
+            <label for="mname-bill" class="col-sm-2 control-label">Middle Initial</label>
+            <div class="col-sm-10">
+              <input type="text" id="mname-bill" class="form-control" name="mname" autocomplete="additional-name">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="lname-bill" class="col-sm-2 control-label">Last Name</label>
-          <div class="col-sm-10">
-            <input type="text" id="lname-bill" class="form-control" name="lname" required autocomplete="family-name">
+          <div class="form-group">
+            <label for="lname-bill" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+              <input type="text" id="lname-bill" class="form-control" name="lname" required autocomplete="family-name">
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="company-bill" class="col-sm-2 control-label">Company</label>
-          <div class="col-sm-10">
-            <input id="company-bill" class="form-control" type="text">
+          <div class="form-group">
+            <label for="company-bill" class="col-sm-2 control-label">Company</label>
+            <div class="col-sm-10">
+              <input id="company-bill" class="form-control" type="text">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="add1-bill" class="col-sm-2 control-label">Address 1</label>
-          <div class="col-sm-10">
-            <input name="city" id="add1-bill" class="form-control" type="text" required autocomplete="address-line1">
+          <div class="form-group">
+            <label for="add1-bill" class="col-sm-2 control-label">Address 1</label>
+            <div class="col-sm-10">
+              <input name="city" id="add1-bill" class="form-control" type="text" required autocomplete="address-line1">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="add2-bill" class="col-sm-2 control-label">Address 2</label>
-          <div class="col-sm-10">
-            <input name="city" id="add2-bill" class="form-control" type="text" autocomplete="address-line2">
+          <div class="form-group">
+            <label for="add2-bill" class="col-sm-2 control-label">Address 2</label>
+            <div class="col-sm-10">
+              <input name="city" id="add2-bill" class="form-control" type="text" autocomplete="address-line2">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="city-bill" class="col-sm-2 control-label">City</label>
-          <div class="col-sm-10">
-            <input name="province" id="city-bill" class="form-control" type="text" required autocomplete="address-level2">
+          <div class="form-group">
+            <label for="city-bill" class="col-sm-2 control-label">City</label>
+            <div class="col-sm-10">
+              <input name="province" id="city-bill" class="form-control" type="text" required autocomplete="address-level2">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="state-bill" class="col-sm-2 control-label">State/Province</label>
-          <div class="col-sm-10">
-            <input name="region" id="state-bill" class="form-control" type="text" required autocomplete="address-level1">
+          <div class="form-group">
+            <label for="state-bill" class="col-sm-2 control-label">State/Province</label>
+            <div class="col-sm-10">
+              <input name="region" id="state-bill" class="form-control" type="text" required autocomplete="address-level1">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="zip-bill" class="col-sm-2 control-label">Postal Code</label>
-          <div class="col-sm-10">
-            <input name="state" id="zip-bill" class="form-control" type="text" required autocomplete="postal-code">
+          <div class="form-group">
+            <label for="zip-bill" class="col-sm-2 control-label">Postal Code</label>
+            <div class="col-sm-10">
+              <input name="state" id="zip-bill" class="form-control" type="text" required autocomplete="postal-code">
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="country-bill" class="col-sm-2 control-label">Country</label>
-          <div class="col-sm-10">
-            <input name="zip" id="country-bill" class="form-control" type="text" required autocomplete="country">
+          <div class="form-group">
+            <label for="country-bill" class="col-sm-2 control-label">Country</label>
+            <div class="col-sm-10">
+              <input name="zip" id="country-bill" class="form-control" type="text" required autocomplete="country">
+            </div>
           </div>
-        </div>
+        </div><!-- end .shipping-add -->
       </form>
     </section>
   <!-- pg 4 Confirmation -->
@@ -297,9 +301,12 @@
           <td>$550.00</td>
         </tr>
       </table>
-      <label class="check-correct">Is your order correct?
-        <input type="checkbox">
-      </label><br><br>
+      <div class="checkbox">
+        <label>
+          <input id="email-list" type="checkbox">Put me on the mailing list?
+        </label>
+      </div>
+
       <input class="btn btn-primary" id="submit" type="submit" value="Submit">
     </section>
   </div><!-- end .container1 -->
