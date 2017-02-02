@@ -66,6 +66,14 @@ a {
   color: #fff;
 }
 
+.spacer-small {
+  margin-top: 30px;
+}
+
+.spacer-xlarge {
+  margin-top: 210px;
+}
+
 @media screen and (max-width: 650px) {
   header {
     /*font-size: 1.5em;*/
